@@ -141,25 +141,20 @@
 
 // console.log(twoSum([3,2,3], 6));
 
-const bracket = "{}[]()"
 
-let stack = [];
 var isValid = function(s) {
-    for(let i = 0; i < s.length; i++){
-       if(s[i] == '{'){
-        stack.push('}')
-       } else if (s[i] == '['){
+    let stack = [];
+    for (let i = 0; i < s.length; i++) {
+      if (s[i] === '{') {
+        stack.push('}');
+      } else if (s[i] === '[') {
         stack.push(']');
-       } else if (s[i] == '('){
-        stack.push(')')
-       } else if(
-        stack.pop() != s[i]){
-            return false
-        } 
-}
+      } else if (s[i] === '(') {
+        stack.push(')');
+      } else if (stack.pop() !== s[i]) {
+        return false;
+      }
+    }
+    return stack.length === 0;
+  };
 
-return stack.length === 0;
-
-};
-
-console.log(isValid(bracket));
