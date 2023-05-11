@@ -155,7 +155,7 @@ var isValid = function(s) {
        } else if(
         stack.pop() != s[i]){
             return false
-        }
+        } 
        
 
        console.log(stack)
