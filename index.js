@@ -156,11 +156,9 @@ var isValid = function(s) {
         stack.pop() != s[i]){
             return false
         } 
-       
-
-       console.log(stack)
-
 }
+
+return stack.length === 0;
 
 };
 
