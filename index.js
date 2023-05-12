@@ -173,8 +173,6 @@ if(c == '['){
   } else if(stack.pop() !== c){
     return false;
   }
-
-  
 }
 return stack.length === 0;
 }
