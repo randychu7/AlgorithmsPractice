@@ -128,7 +128,7 @@
 
 // console.log(birthdayCakeCandles(candle));
 
-
+//1. Two Sum
 // var twoSum = function(nums, target) {
 //     for(let i = 0; i < nums.length; i++){
 //         for(let j = i+1; j < nums.length; j++){
@@ -141,20 +141,42 @@
 
 // console.log(twoSum([3,2,3], 6));
 
+// //2.Vaild Brackets
+// var isValid = function(s) {
+//     let stack = [];
+//     for (let i = 0; i < s.length; i++) {
+//       if (s[i] === '{') {
+//         stack.push('}');
+//       } else if (s[i] === '[') {
+//         stack.push(']');
+//       } else if (s[i] === '(') {
+//         stack.push(')');
+//       } else if (stack.pop() !== s[i]) {
+//         return false;
+//       }
+//     }
+//     return stack.length === 0;
+//   };
 
-var isValid = function(s) {
-    let stack = [];
-    for (let i = 0; i < s.length; i++) {
-      if (s[i] === '{') {
-        stack.push('}');
-      } else if (s[i] === '[') {
-        stack.push(']');
-      } else if (s[i] === '(') {
-        stack.push(')');
-      } else if (stack.pop() !== s[i]) {
-        return false;
-      }
-    }
-    return stack.length === 0;
-  };
 
+
+function isValid (str){
+let stack = [];
+for(let i = 0; i < str.length; i++){
+const c = str[i];
+if(c == '['){
+    stack.push(']');
+  } else if(c == '{'){
+    stack.push('}');
+  } else if(c == '('){
+    stack.push(')');
+  } else if(stack.pop() !== c){
+    return false;
+  }
+
+  
+}
+return stack.length === 0;
+}
+
+console.log(isValid(str))
